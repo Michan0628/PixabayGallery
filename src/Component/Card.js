@@ -1,5 +1,6 @@
 import React from 'react'
 import './card.scss'
+
 export default function Card({image}) {
   const tags = image.tags.split(',')
     return (
@@ -18,8 +19,8 @@ export default function Card({image}) {
           </ul>
         </div>
         <div className="card__tags">
-          {tags.map(tag=>(
-          <span className="card__tag" key={image.id}>#{tag}</span>
+          {tags.map((tag, index)=>(
+          <span className="card__tag" key={index}>#{tag}</span>
 
           ))}
         </div>
