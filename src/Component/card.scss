@@ -4,6 +4,12 @@ html { box-sizing: border-box; }
 
 .card{
     &__container{
-
+        width: 300px;
+        height:600px;
+        box-shadow: 7px 17px 28px -5px rgba(226,233,240,0.83);
+        margin:1em;
+    }
+    &__photo{
+        width:100%;
     }
 }

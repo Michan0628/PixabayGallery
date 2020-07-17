@@ -21,9 +21,12 @@ function App() {
       });
   });
   return (
-    <div className="App container">
-      
-      <Card />
+    <div className="App">
+      <div className="container">
+        {images.map(image=>(
+          <Card key={image.id} image={image}/>
+        ))}
+      </div>
     </div>
   );
 }

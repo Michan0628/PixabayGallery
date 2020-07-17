@@ -1,25 +1,27 @@
 import React from 'react'
-
-export default function Card() {
+import './card.scss'
+export default function Card({image}) {
+  const tags = image.tags.split(',')
     return (
         <div className="card__container">
         <img
-          src="http://source.unsplash.com/random"
+          src={image.webformatURL}
           alt="this is random photo"
           className="card__photo"
         />
         <div className="card__body">
-          <div className="card__userName">Photo by John Doe</div>
+          <div className="card__userName">Photo by {image.user}</div>
           <ul>
-            <li>Views: 4000</li>
-            <li>Downloads: 4000</li>
-            <li>Likess: 4000</li>
+            <li>Views: {image.views}</li>
+            <li>Downloads: {image.downloads}</li>
+            <li>Likess: {image.likes}</li>
           </ul>
         </div>
         <div className="card__tags">
-          <span className="card__tag">#Flower</span>
-          <span className="card__tag">#Flower</span>
-          <span className="card__tag">#Flower</span>
+          {tags.map(tag=>(
+          <span className="card__tag" key={image.id}>#{tag}</span>
+
+          ))}
         </div>
       </div>
     )
